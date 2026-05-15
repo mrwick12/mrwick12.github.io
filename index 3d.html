@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ═══ META & SEO ═══ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Akshat Tiwari — Senior Software Engineer at Optum. Java, Spring Boot, React, TypeScript, Docker, AWS, Azure. Building fast, secure, beautifully engineered systems.">
+  <meta name="keywords" content="Akshat Tiwari, Senior Software Engineer, Java, Spring Boot, React, TypeScript, Docker, AWS, Azure, Optum, Portfolio">
+  <meta name="author" content="Akshat Tiwari">
+  <meta name="robots" content="index, follow">
+  <title>Akshat Tiwari — Senior Software Engineer</title>
+
+  <!-- ═══ OPEN GRAPH ═══ -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://mrwick12.github.io/">
+  <meta property="og:title"       content="Akshat Tiwari — Senior Software Engineer">
+  <meta property="og:description" content="Java · Spring Boot · React · TypeScript · Docker · AWS · Azure. Building fast, secure, beautifully engineered systems.">
+  <meta property="og:image"       content="https://mrwick12.github.io/og-preview.png">
+
+  <!-- ═══ TWITTER CARD ═══ -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Akshat Tiwari — Senior Software Engineer">
+  <meta name="twitter:description" content="Java · Spring Boot · React · TypeScript · Docker · AWS · Azure.">
+  <meta name="twitter:image"       content="https://mrwick12.github.io/og-preview.png">
+
+  <!-- ═══ CANONICAL ═══ -->
+  <link rel="canonical" href="https://mrwick12.github.io/">
+
+  <!-- ═══ FONTS ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- ═══ STYLES ═══ -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Skip navigation for keyboard users -->
+  <a class="skip-nav" href="#main">Skip to main content</a>
+
+  <!-- Custom cursor -->
+  <div id="cur"      aria-hidden="true"></div>
+  <div id="cur-ring" aria-hidden="true"></div>
+
+  <!-- Scroll progress bar -->
+  <div id="bar" role="progressbar" aria-hidden="true"></div>
+
+  <!-- Particle canvas -->
+  <canvas id="canvas" aria-hidden="true"></canvas>
+
+  <!-- ═══════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════ -->
+  <nav id="nav" class="nav" aria-label="Primary navigation">
+    <a href="#hero" class="nav__logo" aria-label="Akshat Tiwari — home">AT.</a>
+
+    <!-- Desktop links -->
+    <ul class="nav__links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Mobile hamburger -->
+    <button class="nav__burger" id="burger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile drawer nav -->
+  <ul class="nav__mobile" id="mobile-nav" role="list" aria-label="Mobile navigation">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <main id="main">
+
+    <!-- ═══════════════════════════════
+         HERO
+         ═══════════════════════════════ -->
+    <section id="hero" class="hero" aria-label="Introduction">
+      <!-- Background decorations -->
+      <div class="orb orb1" aria-hidden="true"></div>
+      <div class="orb orb2" aria-hidden="true"></div>
+      <div class="orb orb3" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+
+      <!-- Left column: text content -->
+      <div class="hero__left">
+        <div class="hero__eyebrow" aria-label="Status: Open to opportunities">
+          <span class="hero__pulse" aria-hidden="true"></span>
+          Open to opportunities
+        </div>
+
+        <h1 class="hero__name">
+          <span class="hero__name-line1">Akshat</span>
+          <span class="hero__name-line2">Tiwari</span>
+        </h1>
+
+        <p class="hero__role">
+          Senior Software Engineer
+          <span class="at">@ Optum</span>
+        </p>
+
+        <div class="hero__typed" aria-live="polite" aria-label="Role rotating text">
+          <span id="typed"></span><span class="tcursor" aria-hidden="true">|</span>
+        </div>
+
+        <div class="hero__ctas">
+          <a href="mailto:akshattripathi07@gmail.com" class="btn btn--teal">✉ Let's Talk</a>
+          <a href="#experience" class="btn btn--outline">View My Work ↓</a>
+        </div>
+      </div>
+
+      <!-- Right column: 3D scene + stats card -->
+      <div class="hero__right" aria-hidden="true">
+        <!-- Three.js 3D canvas -->
+        <div class="hero__canvas-wrap">
+          <canvas id="hero-canvas"></canvas>
+        </div>
+
+        <!-- Floating stats card -->
+        <div class="float-card">
+          <div class="fc-corner" aria-hidden="true">◎</div>
+          <div class="fc-title">// impact.stats</div>
+
+          <div class="fc-stat">
+            <span class="fc-label">page_load_time</span>
+            <span class="fc-val fc-val--teal">&lt; 10s</span>
+          </div>
+          <div class="fc-stat">
+            <span class="fc-label">test_coverage_gain</span>
+            <span class="fc-val fc-val--gold">+50%</span>
+          </div>
+          <div class="fc-stat">
+            <span class="fc-label">vulns_eliminated</span>
+            <span class="fc-val fc-val--fire">5,000+</span>
+          </div>
+          <div class="fc-stat">
+            <span class="fc-label">automation_rate</span>
+            <span class="fc-val fc-val--teal">85%</span>
+          </div>
+          <div class="fc-stat">
+            <span class="fc-label">jira_tickets_resolved</span>
+            <span class="fc-val fc-val--gold">20+</span>
+          </div>
+          <div class="fc-stat">
+            <span class="fc-label">optum_ranking</span>
+            <span class="fc-val fc-val--fire">Top 150</span>
+          </div>
+
+          <div class="badge-row">
+            <span class="badge">AZ-900</span>
+            <span class="badge">AI-900</span>
+            <span class="badge">5★ CodeChef</span>
+            <span class="badge">AI Dojo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <div class="scroll-track"></div>
+        Scroll
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════
+         ABOUT
+         ═══════════════════════════════ -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="reveal">
+        <p class="s-pre">Who I Am</p>
+        <h2 id="about-title" class="section-title">About <em>Me</em></h2>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__text reveal-left">
+          <p>I'm a <strong>Senior Software Engineer at Optum</strong> with a passion for building systems that are fast, secure, and beautifully engineered. I work across the full stack — <strong>Java, Spring Boot, React, TypeScript, Docker</strong> — and deploy confidently on <em>AWS and Azure</em>.</p>
+          <p>My proudest wins? Slashing a page load from <strong>10 minutes to under 10 seconds</strong> through DLL optimization. Eliminating <strong>5,000+ CodeQL vulnerabilities</strong> to just 20 alongside our security team. Pushing test coverage up by <strong>over 50%</strong> across 20 critical pages. These aren't just metrics — they're real impact.</p>
+          <p>I'm also an early adopter of <em>AI-powered development tools</em> — GitHub Copilot, Claude, Codex — using them daily to ship faster without compromising quality. Recognized among the <strong>Top 150 at Optum</strong> for the AI Dojo program.</p>
+        </div>
+
+        <div class="kpi-grid reveal-right">
+          <div class="kpi delay-1">
+            <div class="kpi__num" data-target="10" data-prefix="&lt;" data-suffix="s">&lt;10s</div>
+            <div class="kpi__label">Page load reduced</div>
+          </div>
+          <div class="kpi delay-2">
+            <div class="kpi__num" data-target="50" data-suffix="%+">50%+</div>
+            <div class="kpi__label">Test coverage gain</div>
+          </div>
+          <div class="kpi delay-3">
+            <div class="kpi__num" data-target="5000" data-suffix="+">5K+</div>
+            <div class="kpi__label">Vulns eliminated</div>
+          </div>
+          <div class="kpi delay-4">
+            <div class="kpi__num" data-target="85" data-suffix="%">85%</div>
+            <div class="kpi__label">Automation rate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════
+         EXPERIENCE
+         ═══════════════════════════════ -->
+    <section id="experience" aria-labelledby="exp-title">
+      <div class="reveal">
+        <p class="s-pre">Career Journey</p>
+        <h2 id="exp-title" class="section-title">Profes<em>sional</em> Experience</h2>
+      </div>
+
+      <div class="timeline">
+
+        <!-- Optum -->
+        <article class="timeline__item reveal">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="t-card">
+            <header class="t-header">
+              <div class="t-company">Optum</div>
+              <div class="t-period">May 2023 — Present</div>
+            </header>
+            <div class="t-role">Senior Software Engineer</div>
+
+            <div class="proj-block">
+              <div class="proj-head">
+                <span class="arrow" aria-hidden="true">▶</span>
+                EasyTest &nbsp;<span style="color:var(--mist);font-weight:400">(July 2024 — Present)</span>
+              </div>
+              <ul class="bullet-list">
+                <li>Implemented major new features across multiple pages during the rewrite, ensuring modernized architecture and enhanced UX.</li>
+                <li>Accelerated performance by optimizing DLL loading on a critical page — load time dropped from <strong style="color:var(--teal)">5–10 minutes to under 10 seconds</strong>.</li>
+                <li>Engineered three major keyboard shortcut features to improve accessibility and streamline navigation workflows.</li>
+                <li>Spearheaded Docker image migration to Artifactory SaaS, architecting optimized Dockerfiles for efficient CI/CD pipelines.</li>
+                <li>Integrated Podman support for container image pulls from Artifactory, maintaining seamless CI/CD workflows post-Docker decommission.</li>
+                <li>Proactively resolved 20+ critical issues and performance bottlenecks, significantly enhancing system stability and scalability.</li>
+                <li>Developed robust file import/export functionalities across multiple formats, streamlining data processing pipelines.</li>
+                <li>Boosted overall code coverage by <strong style="color:var(--teal)">50%+</strong> with comprehensive React unit tests across 20 critical pages.</li>
+              </ul>
+              <div class="tech-line"><span>Tech:</span> JAVA · Spring Boot · React · GitHub Copilot · Codex · Claude · Specs-kit · REST APIs · Maven · Postman · Docker · Podman · MongoDB · Artifactory SaaS · Git</div>
+            </div>
+
+            <div class="proj-block">
+              <div class="proj-head">
+                <span class="arrow" aria-hidden="true">▶</span>
+                Webstrat &nbsp;<span style="color:var(--mist);font-weight:400">(June 2023 — November 2024)</span>
+              </div>
+              <ul class="bullet-list">
+                <li>Engineered rapid data entry module — users now populate 30–40 fields in <strong style="color:var(--teal)">under 3 seconds</strong>.</li>
+                <li>Built customizable UI printing solution with "Print All" and selective page printing capabilities.</li>
+                <li>Architected test automation repository with reusable functions — <strong style="color:var(--teal)">70% of manual test cases automated</strong>, 85% overall rate.</li>
+                <li>Partnered with security team to remediate <strong style="color:var(--fire)">5,000+ recurring CodeQL vulnerabilities</strong> down to just 20.</li>
+              </ul>
+              <div class="tech-line"><span>Tech:</span> .NET · React · JavaScript · Microsoft SQL Server · Docker · Git</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- HighRadius -->
+        <article class="timeline__item reveal delay-2">
+          <div class="timeline__dot timeline__dot--alt" aria-hidden="true"></div>
+          <div class="t-card">
+            <header class="t-header">
+              <div class="t-company">HighRadius</div>
+              <div class="t-period">Jan 2022 — Dec 2022</div>
+            </header>
+            <div class="t-role">ARPA Developer · Internship</div>
+            <ul class="bullet-list">
+              <li>Maintained and optimized Java-based backend architectures, resolving critical client-reported defects.</li>
+              <li>Analyzed and resolved <strong style="color:var(--teal)">20+ complex JIRA tickets</strong>, consistently meeting strict SLAs.</li>
+            </ul>
+            <div class="tech-line"><span>Tech:</span> Java · MySQL · Eclipse · JQuery</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════
+         EDUCATION
+         ═══════════════════════════════ -->
+    <section id="education" aria-labelledby="edu-title">
+      <div class="reveal">
+        <p class="s-pre">Academic Background</p>
+        <h2 id="edu-title" class="section-title">Edu<em>cation</em></h2>
+      </div>
+
+      <div class="edu-card reveal">
+        <div class="edu-stripe" aria-hidden="true"></div>
+        <div class="edu-icon" aria-hidden="true">🎓</div>
+        <div>
+          <div class="edu-deg">B.Tech in Engineering</div>
+          <div class="edu-inst">Kalinga Institute of Industrial Technology</div>
+          <div class="edu-year">Class of 2023 · Bhubaneswar, India</div>
+        </div>
+        <div class="cpi" aria-label="CPI: 8.68">
+          <div class="cpi__num">8.68</div>
+          <div class="cpi__label">CPI</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════
+         PROJECTS
+         ═══════════════════════════════ -->
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="reveal">
+        <p class="s-pre">Side Work</p>
+        <h2 id="projects-title" class="section-title">Academic <em>Projects</em></h2>
+      </div>
+
+      <div class="proj-grid">
+
+        <article class="p-card">
+          <div class="p-card__glow-stripe" aria-hidden="true"></div>
+          <div class="p-card__top">
+            <div class="p-card__icon" aria-hidden="true">💻</div>
+            <span class="p-card__link" aria-label="View CodeCollab project">↗</span>
+          </div>
+          <h3>CodeCollab</h3>
+          <p>Real-time collaborative code editor with syntax highlighting, live multi-user editing, version history, and conflict resolution algorithms.</p>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Socket.IO</span>
+            <span class="tag">Real-time</span>
+          </div>
+          <div class="p-card__num" aria-hidden="true">01</div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-card__glow-stripe" aria-hidden="true"></div>
+          <div class="p-card__top">
+            <div class="p-card__icon" aria-hidden="true">💬</div>
+            <span class="p-card__link" aria-label="View Chat App project">↗</span>
+          </div>
+          <h3>Chat App</h3>
+          <p>Secure real-time messaging platform with end-to-end encryption, group channels, typing indicators, notifications, and file sharing.</p>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">WebSockets</span>
+            <span class="tag">E2E Encrypt</span>
+          </div>
+          <div class="p-card__num" aria-hidden="true">02</div>
+        </article>
+
+        <article class="p-card">
+          <div class="p-card__glow-stripe" aria-hidden="true"></div>
+          <div class="p-card__top">
+            <div class="p-card__icon" aria-hidden="true">🎵</div>
+            <span class="p-card__link" aria-label="View My-Muzic project">↗</span>
+          </div>
+          <h3>My-Muzic</h3>
+          <p>Social music player with auth, profile pictures, private playlists and a shared "Favourites" list so users discover each other's music taste.</p>
+          <div class="tags">
+            <span class="tag">Full Stack</span>
+            <span class="tag">Auth</span>
+            <span class="tag">Social</span>
+          </div>
+          <div class="p-card__num" aria-hidden="true">03</div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════
+         SKILLS
+         ═══════════════════════════════ -->
+    <section id="skills" aria-labelledby="skills-title">
+      <div class="reveal">
+        <p class="s-pre">Tech Stack</p>
+        <h2 id="skills-title" class="section-title">Technical <em>Skills</em></h2>
+      </div>
+
+      <div class="skills-layout">
+
+        <div class="sk-group">
+          <div class="sk-head"><div class="sk-icon" aria-hidden="true">⌨</div>Languages</div>
+          <div class="pills">
+            <span class="pill">Java</span><span class="pill">C++</span><span class="pill">C</span>
+            <span class="pill">C#</span><span class="pill">.NET</span>
+            <span class="pill">JavaScript</span><span class="pill">TypeScript</span>
+          </div>
+        </div>
+
+        <div class="sk-group">
+          <div class="sk-head"><div class="sk-icon" aria-hidden="true">🖥</div>Frontend</div>
+          <div class="pills">
+            <span class="pill">React</span><span class="pill">Angular</span>
+            <span class="pill">Node.js</span><span class="pill">Socket.IO</span><span class="pill">HTML/CSS</span>
+          </div>
+        </div>
+
+        <div class="sk-group">
+          <div class="sk-head"><div class="sk-icon" aria-hidden="true">⚙️</div>Backend &amp; Cloud</div>
+          <div class="pills">
+            <span class="pill">Spring Boot</span><span class="pill">REST APIs</span>
+            <span class="pill">AWS</span><span class="pill">Azure</span>
+            <span class="pill">Docker</span><span class="pill">Podman</span>
+          </div>
+        </div>
+
+        <div class="sk-group">
+          <div class="sk-head"><div class="sk-icon" aria-hidden="true">🗄</div>Databases &amp; Tools</div>
+          <div class="pills">
+            <span class="pill">MongoDB</span><span class="pill">MySQL</span>
+            <span class="pill">MS SQL Server</span><span class="pill">Git</span>
+            <span class="pill">GitHub Actions</span><span class="pill">SonarQube</span>
+            <span class="pill">Maven</span><span class="pill">Postman</span>
+          </div>
+        </div>
+
+        <div class="sk-group sk-group--ai">
+          <div class="sk-head"><div class="sk-icon" aria-hidden="true">🤖</div>AI Tools</div>
+          <div class="pills">
+            <span class="pill">GitHub Copilot</span><span class="pill">Claude</span>
+            <span class="pill">Codex</span><span class="pill">Gemini</span><span class="pill">Specs-kit</span>
+          </div>
+        </div>
+
+        <div class="sk-group">
+          <div class="sk-head"><div class="sk-icon" aria-hidden="true">🧠</div>Concepts</div>
+          <div class="pills">
+            <span class="pill">System Design (LLD)</span>
+            <span class="pill">DSA</span><span class="pill">OOP</span>
+            <span class="pill">CI/CD</span><span class="pill">Artifactory SaaS</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════
+         CERTIFICATIONS
+         ═══════════════════════════════ -->
+    <section id="certifications" aria-labelledby="certs-title">
+      <div class="reveal">
+        <p class="s-pre">Recognition</p>
+        <h2 id="certs-title" class="section-title">Certs &amp; <em>Achievements</em></h2>
+      </div>
+
+      <div class="cert-grid">
+
+        <a class="cert-card"
+           href="https://drive.google.com/file/d/1M4U8u43IekFR2EO9FQUEkqWqMQz-lt00/view?usp=sharing"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Azure Fundamentals Certificate — AZ-900 (opens in new tab)">
+          <div class="cert-arr" aria-hidden="true">↗</div>
+          <div class="cert-ico" aria-hidden="true">☁️</div>
+          <div>
+            <div class="cert-title">Azure Fundamentals</div>
+            <div class="cert-sub">Microsoft Certified · AZ-900</div>
+            <div class="cert-badge">⭐ Official Microsoft Certification</div>
+            <div class="cert-view">View Certificate →</div>
+          </div>
+        </a>
+
+        <a class="cert-card"
+           href="https://drive.google.com/file/d/1fELNeTDdxsM_8iG4mJNQ4YNoYNco0mft/view?usp=sharing"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Azure AI Fundamentals Certificate — AI-900 (opens in new tab)">
+          <div class="cert-arr" aria-hidden="true">↗</div>
+          <div class="cert-ico" aria-hidden="true">🤖</div>
+          <div>
+            <div class="cert-title">Azure AI Fundamentals</div>
+            <div class="cert-sub">Microsoft Certified · AI-900</div>
+            <div class="cert-badge">⭐ Official Microsoft Certification</div>
+            <div class="cert-view">View Certificate →</div>
+          </div>
+        </a>
+
+        <a class="cert-card"
+           href="https://drive.google.com/file/d/1eoTbQATrx2Uznnx_CSFOgug8ShK1dKU9/view?usp=sharing"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Top 150 at Optum — AI Dojo Program Certificate (opens in new tab)">
+          <div class="cert-arr" aria-hidden="true">↗</div>
+          <div class="cert-ico" aria-hidden="true">🏆</div>
+          <div>
+            <div class="cert-title">Top 150 at Optum</div>
+            <div class="cert-sub">AI Dojo Program · Exceptional Performance</div>
+            <div class="cert-badge">🔥 Company-wide Excellence Award</div>
+            <div class="cert-view">View Certificate →</div>
+          </div>
+        </a>
+
+        <div class="cert-card" role="article" aria-label="5-Star CodeChef achievement">
+          <div class="cert-ico" aria-hidden="true">⭐</div>
+          <div>
+            <div class="cert-title">5-Star CodeChef</div>
+            <div class="cert-sub">Competitive Programming Excellence</div>
+            <div class="cert-badge">🥇 5 Star Rating Achieved</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════
+         CONTACT
+         ═══════════════════════════════ -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="reveal">
+        <p class="s-pre">Say Hello</p>
+        <h2 id="contact-title" class="section-title">Let's <em>Connect</em></h2>
+      </div>
+
+      <p class="contact-sub reveal">
+        Open to exciting engineering roles, interesting problems, and conversations about building great software.
+      </p>
+
+      <div class="contact-pills reveal">
+        <a href="mailto:akshattripathi07@gmail.com" class="cp">✉ akshattripathi07@gmail.com</a>
+        <a href="https://www.linkedin.com/in/akshat-tiwari-4b2433197/" target="_blank" rel="noopener noreferrer" class="cp">in LinkedIn</a>
+        <a href="https://github.com/mrwick12" target="_blank" rel="noopener noreferrer" class="cp">⌥ mrwick12</a>
+        <a href="tel:+918955043422" class="cp">📞 +91-8955043422</a>
+      </div>
+
+      <div class="form-wrap reveal">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fn">Name</label>
+            <input id="fn" type="text" placeholder="Your name" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="fe">Email</label>
+            <input id="fe" type="email" placeholder="your@email.com" autocomplete="email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fm">Message</label>
+          <textarea id="fm" placeholder="What's on your mind?"></textarea>
+        </div>
+        <button class="submit-btn" id="send-btn">Send Message →</button>
+        <div id="form-msg" aria-live="polite" aria-atomic="true"></div>
+      </div>
+    </section>
+
+  </main><!-- /main -->
+
+  <!-- ═══════════════════════════════
+       FOOTER
+       ═══════════════════════════════ -->
+  <footer>
+    Engineered with precision ·
+    <strong>Akshat Tiwari</strong> © 2025 ·
+    <a href="https://github.com/mrwick12" target="_blank" rel="noopener noreferrer">mrwick12.github.io</a>
+  </footer>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <!-- Three.js CDN for 3D hero scene -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <!-- Portfolio JS -->
+  <script src="main.js" defer></script>
+
+</body>
+</html>
